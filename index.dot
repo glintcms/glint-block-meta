@@ -1,0 +1,22 @@
+
+<div class="topnav">
+
+  <div class="topnav-window">
+
+    <span class="metadata" >
+
+      <h1>Metadata</h1>
+
+      <label for="title" class="control-label">title</label>
+      <input name="title" class="metadata-title" type="title" />
+
+      <label for="description" class="control-label">description</label>
+      <input name="description" class="metadata-description" type="description" />
+
+    </span>
+
+  </div>
+
+  <div class="topnav-handle">&#8691;</div>
+
+</div>
