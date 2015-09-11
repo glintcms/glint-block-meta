@@ -35,6 +35,9 @@
   "dependencies": {
     "amp-add-class": "^1.1.0",
     "amp-remove-class": "^1.1.0",
+    "debug": "^2.2.0",
+    "domify": "^1.4.0",
+    "dot": "^1.0.3",
     "insert-css": "^0.2.0",
     "utils-merge": "^1.0.0"
   },
