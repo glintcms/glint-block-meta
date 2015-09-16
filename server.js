@@ -1,7 +1,7 @@
 /**
  * Module dependencies.
  */
-var debug = require('debug')('glint:MetaBlock');
+var debug = require('debug')('glint-block-meta');
 var merge = require('utils-merge');
 
 

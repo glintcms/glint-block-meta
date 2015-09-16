@@ -2,7 +2,7 @@
  * Module dependencies.
  */
 var fs = require('fs');
-var debug = require('debug')('glint:ImageBlock');
+var debug = require('debug')('glint-block-meta');
 var merge = require('utils-merge');
 var dot = require('dot');
 var domify = require('domify');
