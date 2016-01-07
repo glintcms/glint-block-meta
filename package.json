@@ -1,6 +1,6 @@
 {
   "name": "glint-block-meta",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Editable Meta Data Block",
   "main": "server.js",
   "browser": "browser.js",
