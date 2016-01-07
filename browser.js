@@ -71,23 +71,32 @@ MetaBlock.prototype.edit = function() {
     this.el = document.querySelector(this.selector);
     this.handle = document.querySelector(this.selectorHandle);
     this.nav = document.querySelector(this.selectorWindow);
-    this.navHeight = this.nav.getBoundingClientRect().height;
-    this.showPosition = -20 + 'px';
-    this.hidePosition = (-20 - this.navHeight) + 'px';
-    this.el.style.top = this.hidePosition;
+    setTimeout(function(){
+      calculatePositions();
+      self.el.style.top = self.hidePosition;
+    }, 100);
+
     var timed = undefined;
 
     function enter(e) {
       if (timed) clearTimeout(timed);
+      calculatePositions();
       self.el.style.top = self.showPosition;
       addClass(self.el, 'topnav-flyout');
     }
 
     function leave(e) {
       timed = setTimeout(function() {
+        calculatePositions();
         self.el.style.top = self.hidePosition;
         removeClass(self.el, 'topnav-flyout');
       }, 100);
+    }
+
+    function calculatePositions() {
+      self.navHeight = self.nav.getBoundingClientRect().height;
+      self.showPosition = -20 + 'px';
+      self.hidePosition = (-20 - self.navHeight) + 'px';
     }
 
     this.handle.addEventListener('mouseover', enter);
@@ -142,7 +151,7 @@ MetaBlock.prototype.setContent = function(content) {
 MetaBlock.prototype.getMetaBlockElement = function() {
   this.title = document.querySelector('.metadata-title');
   this.description = document.querySelector('.metadata-description');
-}
+};
 
 MetaBlock.prototype.storeHeaderElements = function(content) {
   if (!content) return;
@@ -153,4 +162,4 @@ MetaBlock.prototype.storeHeaderElements = function(content) {
   if (!description) description = document.head.appendChild(domify('<meta name="description" >'));
   description.setAttribute('content', content.description);
 
-}
+};
